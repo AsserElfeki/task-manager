@@ -26,7 +26,7 @@ const signinContent = {
 const initial = { email: "", password: "", firstName: "", lastName: "" };
 
 export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
-  const [formState, setFormState] = useState({ ...initial });
+  const [formState, setFormState] = useState({ ...initial }); // ... to prevent mutating initial object
   const [error, setError] = useState("");
 
   const router = useRouter();
@@ -41,7 +41,7 @@ export default function AuthForm({ mode }: { mode: "register" | "signin" }) {
           await signin(formState);
         }
 
-        router.replace("/home");
+        router.replace("/home"); //replace to prevent from going back
       } catch (e) {
         setError(`Could not ${mode}`);
       } finally {
