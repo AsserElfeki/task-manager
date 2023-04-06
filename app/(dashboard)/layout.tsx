@@ -1,10 +1,11 @@
 import GlassPane from '@/components/GlassPane';
 import "@/styles/global.css";
-// import { Inter } from "@next/font/google";
+import { Sidebar } from 'react-feather';
+import { Inter } from "@next/font/google";
 
-// const inter = Inter({
-//   variable: "--font-inter",
-// });
+const inter = Inter({
+  variable: "--font-inter",
+});
 
 export default function DashboardRootLayout({ children }) {
   return (
@@ -16,8 +17,9 @@ export default function DashboardRootLayout({ children }) {
               <title>Next.js + Tailwind CSS</title>
           </head>
           
-      <body className="h-screen w-screen rainbow-mesh p-6">
+      <body className="h-screen w-screen candy-mesh p-6">
         <GlassPane className="w-full h-full flex items-center justify-center">
+          <Sidebar/>
           {children}
         </GlassPane>
       </body>
