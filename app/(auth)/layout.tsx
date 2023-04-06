@@ -17,7 +17,7 @@ export default function AuthRootLayout({ children }) {
           </head>
           
       <body className="h-screen w-screen rainbow-mesh p-6">
-        <GlassPane className="w-full h-full flex items-center justify-center">
+        <GlassPane className="w-full h-full flex items-center justify-center gap-4">
           {children}
         </GlassPane>
       </body>

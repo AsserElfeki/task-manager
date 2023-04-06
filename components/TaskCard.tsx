@@ -24,7 +24,7 @@ const getData = async () => {
   return tasks;
 };
 const TaskCard = async ({ title, tasks }) => {
-  const data = tasks || (await getData());
+  const data = tasks || (await getData()); // extened to take an optional task object as a prop so it can be used inside project page 
 
   return (
     <Card>
@@ -62,4 +62,4 @@ const TaskCard = async ({ title, tasks }) => {
   );
 };
 
-export default TasksCard;
+export default TaskCard;
