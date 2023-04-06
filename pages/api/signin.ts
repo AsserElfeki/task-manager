@@ -2,6 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { db } from "@/lib/db";
 import { comparePasswords, createJWT } from "@/lib/auth";
 import { serialize } from "cookie";
+import { redirect } from 'next/dist/server/api-utils';
 
 export default async function signin(
     req: NextApiRequest,
@@ -17,7 +18,7 @@ export default async function signin(
         if (!user) {
             res.status(401);
             res.json({ error: "Invalid login" });
-            
+
             return;
         }
 
@@ -35,6 +36,8 @@ export default async function signin(
             );
             res.status(201);
             res.json({});
+            //redirect to home page 
+            redirect(res, '/home');
         } else {
             res.status(401);
             res.json({ error: "Invalid login" });

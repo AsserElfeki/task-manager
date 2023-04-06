@@ -9,7 +9,7 @@ import GreetingsSkeleton from '@/components/GreetingsSkeleton';
 import ProjectCard from '@/components/ProjectCard';
 
 const getData = async () => {
-  await delay(2000);
+//   await delay(100);
   const user = await getUserFromCookie(cookies()); //auth first
   const projects = await db.project.findMany({
     where: {
